@@ -1,0 +1,22 @@
+{
+    "name": "ChargeBee Link Helper",
+    "description": "A very simple extension that allows you to select an email address or customer name anywhere and quickly open a link to ChargeBee.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_icon": "chargebee-icon.png"
+    },
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background-worker.js"
+    },
+    "icons": {
+        "16": "chargebee-icon.png",
+        "48": "chargebee-icon.png",
+        "128": "chargebee-icon.png"
+    }
+}
