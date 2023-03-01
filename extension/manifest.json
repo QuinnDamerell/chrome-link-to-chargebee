@@ -9,7 +9,8 @@
     "permissions": [
         "contextMenus",
         "tabs",
-        "storage"
+        "storage",
+        "activeTab"
     ],
     "background": {
         "service_worker": "background-worker.js"

@@ -10,6 +10,11 @@ chrome.runtime.onInstalled.addListener(function()
     });
 
     chrome.contextMenus.onClicked.addListener(contextMenuClickHandler);
+
+    chrome.action.onClicked.addListener(function(tab) 
+    {
+        chrome.tabs.create({'url': "https://octoeverywhere.chargebee.com" }, function(tab) {});
+    });
 })
 
 function contextMenuClickHandler(info, tab)
