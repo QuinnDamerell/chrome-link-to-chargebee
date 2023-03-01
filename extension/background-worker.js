@@ -36,5 +36,3 @@ function contextMenuClickHandler(info, tab)
     }
     chrome.tabs.create({'url': url }, function(tab) {});
 }
-
-
