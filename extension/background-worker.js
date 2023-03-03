@@ -1,21 +1,18 @@
-chrome.runtime.onInstalled.addListener(function()
+// Add the context menu
+chrome.contextMenus.create(
 {
-    // Add the context menu
-    chrome.contextMenus.create(
-    {
-        "id": "chargebee-link-user",
-        "title": "Open User In ChargeBee",
-        "type": "normal",
-        "contexts": ["selection"]
-    });
+    "id": "chargebee-link-user",
+    "title": "Open User In ChargeBee",
+    "type": "normal",
+    "contexts": ["selection"]
+});
+chrome.contextMenus.onClicked.addListener(contextMenuClickHandler);
 
-    chrome.contextMenus.onClicked.addListener(contextMenuClickHandler);
-
-    chrome.action.onClicked.addListener(function(tab) 
-    {
-        chrome.tabs.create({'url': "https://octoeverywhere.chargebee.com" }, function(tab) {});
-    });
-})
+// Add a listener, so when the icon is clicked on the extension bar it opens chargebee.
+chrome.action.onClicked.addListener(function(tab)
+{
+    chrome.tabs.create({'url': "https://octoeverywhere.chargebee.com" }, function(tab) {});
+});
 
 function contextMenuClickHandler(info, tab)
 {
